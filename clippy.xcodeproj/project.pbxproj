@@ -11,6 +11,7 @@
 		A3135BC92C45699900E0D337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3135BC82C45699900E0D337 /* ContentView.swift */; };
 		A3135BCB2C45699C00E0D337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3135BCA2C45699C00E0D337 /* Assets.xcassets */; };
 		A3135BCE2C45699C00E0D337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3135BCD2C45699C00E0D337 /* Preview Assets.xcassets */; };
+		A3135BD72C456AAB00E0D337 /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3135BD62C456AAB00E0D337 /* ClipboardMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A3135BCA2C45699C00E0D337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3135BCD2C45699C00E0D337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3135BCF2C45699C00E0D337 /* clippy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clippy.entitlements; sourceTree = "<group>"; };
+		A3135BD62C456AAB00E0D337 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A3135BC62C45699900E0D337 /* clippyApp.swift */,
+				A3135BD62C456AAB00E0D337 /* ClipboardMonitor.swift */,
 				A3135BC82C45699900E0D337 /* ContentView.swift */,
 				A3135BCA2C45699C00E0D337 /* Assets.xcassets */,
 				A3135BCF2C45699C00E0D337 /* clippy.entitlements */,
@@ -141,6 +144,7 @@
 			files = (
 				A3135BC92C45699900E0D337 /* ContentView.swift in Sources */,
 				A3135BC72C45699900E0D337 /* clippyApp.swift in Sources */,
+				A3135BD72C456AAB00E0D337 /* ClipboardMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
