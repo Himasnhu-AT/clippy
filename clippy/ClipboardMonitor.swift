@@ -7,12 +7,15 @@
 
 import Foundation
 import Cocoa
+import Combine
 
 class ClipboardMonitor: ObservableObject {
     private let pasteboard = NSPasteboard.general
     private var changeCount: Int
     @Published var clipboardHistory: [Item] = []
-
+    
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         changeCount = pasteboard.changeCount
         loadClipboardHistory()
@@ -23,7 +26,9 @@ class ClipboardMonitor: ObservableObject {
         if pasteboard.changeCount != changeCount {
             changeCount = pasteboard.changeCount
             if let copiedString = pasteboard.string(forType: .string) {
-                addClipboardItem(Item(value: copiedString, tags: []))
+                let newItem = Item(value: copiedString, tags: [])
+                addClipboardItem(newItem)
+                NotificationCenter.default.post(name: .newClipboardItem, object: newItem)
             }
         }
     }
@@ -55,4 +60,8 @@ class ClipboardMonitor: ObservableObject {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
         return AXIsProcessTrustedWithOptions(options)
     }
+}
+
+extension Notification.Name {
+    static let newClipboardItem = Notification.Name("newClipboardItem")
 }

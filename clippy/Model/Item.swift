@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Identifiable {
+struct Item: Identifiable, Hashable {
     
     let id = UUID()
     var value: String
@@ -24,10 +24,10 @@ struct Item: Identifiable {
     
     static func examples() -> [Item] {
         [
-            Item(value: "Sample Item pasted 1", tags: ["password", "Email Id"]),
-            Item(value: "Sample Item pasted 2", tags: ["password", "Email Id"]),
-            Item(value: "Sample Item pasted 3", tags: ["password", "Email Id"]),
-            Item(value: "Sample Item pasted 4", tags: ["password", "Email Id"])
+            Item(value: "Sample Item pasted 1", tags: ["favourite", "Email Id"]),
+            Item(value: "Sample Item pasted 2", tags: ["important", "Email Id"]),
+            Item(value: "Sample Item pasted 3", tags: ["favourite", "Email Id"]),
+            Item(value: "Sample Item pasted 4", tags: ["important", "Email Id"])
         ]
     }
     

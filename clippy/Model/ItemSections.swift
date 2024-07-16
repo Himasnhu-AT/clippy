@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ItemSections {
+enum ItemSections: Identifiable, CaseIterable, Hashable {
     case all
     case favourites
     case important
@@ -42,11 +42,11 @@ enum ItemSections {
     var iconName: String {
             switch self {
                 case .all:
-                    "" //icon for all
+                    "tray.full"
                 case .favourites:
                     "star"
                 case .important:
-                    "" // icon for important
+                    "exclamationmark.circle"
                 case .list(_):
                     "folder"
             }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemGroup: Identifiable {
+struct ItemGroup: Identifiable, Hashable {
     
     let id = UUID()
     var title: String
