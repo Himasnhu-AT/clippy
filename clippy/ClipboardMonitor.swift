@@ -11,10 +11,11 @@ import Cocoa
 class ClipboardMonitor: ObservableObject {
     private let pasteboard = NSPasteboard.general
     private var changeCount: Int
-    @Published var clipboardHistory: [(String, Date)] = []
+    @Published var clipboardHistory: [Item] = []
 
     init() {
         changeCount = pasteboard.changeCount
+        loadClipboardHistory()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(checkForChanges), userInfo: nil, repeats: true)
     }
 
@@ -22,35 +23,34 @@ class ClipboardMonitor: ObservableObject {
         if pasteboard.changeCount != changeCount {
             changeCount = pasteboard.changeCount
             if let copiedString = pasteboard.string(forType: .string) {
-                addClipboardItem(copiedString)
+                addClipboardItem(Item(value: copiedString, tags: []))
             }
         }
     }
 
-    private func addClipboardItem(_ item: String) {
-        let timestamp = Date()
-        clipboardHistory.append((item, timestamp))
+    private func addClipboardItem(_ item: Item) {
+        clipboardHistory.append(item)
         saveClipboardHistory()
     }
 
     private func saveClipboardHistory() {
         let defaults = UserDefaults.standard
-        let historyStrings = clipboardHistory.map { $0.0 }
+        let historyStrings = clipboardHistory.map { $0.value }
         defaults.set(historyStrings, forKey: "clipboardHistory")
     }
 
     func loadClipboardHistory() {
         let defaults = UserDefaults.standard
         if let historyStrings = defaults.stringArray(forKey: "clipboardHistory") {
-            clipboardHistory = historyStrings.map { ($0, Date()) }
+            clipboardHistory = historyStrings.map { Item(value: $0, tags: []) }
         }
     }
-    
+
     func setClipboardContent(_ content: String) {
         pasteboard.clearContents()
         pasteboard.setString(content, forType: .string)
     }
-    
+
     func checkAccessibilityPermissions() -> Bool {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
         return AXIsProcessTrustedWithOptions(options)

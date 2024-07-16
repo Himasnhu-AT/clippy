@@ -12,28 +12,11 @@ struct ContentView: View {
     @StateObject private var clipboardMonitor = ClipboardMonitor()
 
     var body: some View {
-        VStack {
-            List(clipboardMonitor.clipboardHistory, id: \.0) { item in
-                Text(item.0)
-                    .padding()
-                    .onTapGesture {
-                        clipboardMonitor.setClipboardContent(item.0)
-                        pasteAtCursor()
-                    }
-            }
-            Button("Clear History") {
-                clipboardMonitor.clipboardHistory.removeAll()
-                UserDefaults.standard.removeObject(forKey: "clipboardHistory")
-            }
-        }
-        .padding()
-        .onAppear {
-            clipboardMonitor.loadClipboardHistory()
-            if !clipboardMonitor.checkAccessibilityPermissions() {
-                // Inform the user to grant accessibility permissions
-                print("Please enable accessibility permissions in System Preferences.")
-            }
-        }
+        NavigationSplitView(sidebar: {
+            SidebarView()
+        }, detail: {
+            MainView()
+        })
     }
 
     private func pasteAtCursor() {
