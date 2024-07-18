@@ -34,7 +34,12 @@ class ClipboardMonitor: ObservableObject {
     }
 
     private func addClipboardItem(_ item: Item) {
-        clipboardHistory.append(item)
+        // Remove the item if it already exists in the history
+        if let existingIndex = clipboardHistory.firstIndex(where: { $0.value == item.value }) {
+            clipboardHistory.remove(at: existingIndex)
+        }
+        // Add the new item to the top of the history
+        clipboardHistory.insert(item, at: 0)
         saveClipboardHistory()
     }
 
