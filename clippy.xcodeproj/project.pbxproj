@@ -12,6 +12,7 @@
 		A3135BCB2C45699C00E0D337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3135BCA2C45699C00E0D337 /* Assets.xcassets */; };
 		A3135BCE2C45699C00E0D337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3135BCD2C45699C00E0D337 /* Preview Assets.xcassets */; };
 		A3135BD72C456AAB00E0D337 /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3135BD62C456AAB00E0D337 /* ClipboardMonitor.swift */; };
+		A373BE132C4A920700420E7F /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A373BE122C4A920700420E7F /* MenuBar.swift */; };
 		A3EC1BF72C4678EB00E86BC2 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC1BF62C4678EB00E86BC2 /* SidebarView.swift */; };
 		A3EC1BFA2C467A9100E86BC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC1BF92C467A9100E86BC2 /* Item.swift */; };
 		A3EC1BFC2C467AA600E86BC2 /* ItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC1BFB2C467AA600E86BC2 /* ItemGroup.swift */; };
@@ -27,6 +28,7 @@
 		A3135BCD2C45699C00E0D337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3135BCF2C45699C00E0D337 /* clippy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clippy.entitlements; sourceTree = "<group>"; };
 		A3135BD62C456AAB00E0D337 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
+		A373BE122C4A920700420E7F /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		A3EC1BF62C4678EB00E86BC2 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		A3EC1BF92C467A9100E86BC2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A3EC1BFB2C467AA600E86BC2 /* ItemGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGroup.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A3EC1BF82C467A3300E86BC2 /* Model */,
 				A3135BC82C45699900E0D337 /* ContentView.swift */,
 				A3EC1BFF2C46812D00E86BC2 /* MainView.swift */,
+				A373BE122C4A920700420E7F /* MenuBar.swift */,
 				A3EC1BF62C4678EB00E86BC2 /* SidebarView.swift */,
 				A3135BCA2C45699C00E0D337 /* Assets.xcassets */,
 				A3135BCF2C45699C00E0D337 /* clippy.entitlements */,
@@ -170,6 +173,7 @@
 				A3135BC92C45699900E0D337 /* ContentView.swift in Sources */,
 				A3EC1BFC2C467AA600E86BC2 /* ItemGroup.swift in Sources */,
 				A3EC1BF72C4678EB00E86BC2 /* SidebarView.swift in Sources */,
+				A373BE132C4A920700420E7F /* MenuBar.swift in Sources */,
 				A3EC1BFE2C467DC000E86BC2 /* ItemSections.swift in Sources */,
 				A3135BC72C45699900E0D337 /* clippyApp.swift in Sources */,
 				A3135BD72C456AAB00E0D337 /* ClipboardMonitor.swift in Sources */,

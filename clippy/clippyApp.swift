@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct clippyApp: App {
+    @StateObject private var clipboardMonitor = ClipboardMonitor()
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+            WindowGroup {
+                ContentView()
+                    .environmentObject(clipboardMonitor)
+            }
+
+            MenuBarExtra {
+                MenuView()
+                    .environmentObject(clipboardMonitor)
+            } label: {
+                Image(systemName: "doc.on.clipboard")
+            }
+            .menuBarExtraStyle(.window)
         }
-    }
 }

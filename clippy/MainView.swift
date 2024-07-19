@@ -11,7 +11,7 @@ struct MainView: View {
     var title: String
     var items: [Item]
 
-    @StateObject private var clipboardMonitor = ClipboardMonitor()
+    @EnvironmentObject var clipboardMonitor: ClipboardMonitor
 
     var body: some View {
         VStack {
